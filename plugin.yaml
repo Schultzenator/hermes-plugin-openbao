@@ -1,0 +1,20 @@
+name: openbao
+version: "0.1.0"
+description: "Resolve Hermes secret-source mappings from OpenBao or HashiCorp Vault KV v1/v2 over the native HTTP API."
+author: "Schultzenator"
+requires_hermes: ">=0.0.0"
+config_schema:
+  enabled: {type: bool, default: false, description: "Enable the OpenBao secret source"}
+  env: {type: dict, default: {}, description: "ENV_VAR to bao://mount/path#key mappings"}
+  vault_addr: {type: string, default: "http://127.0.0.1:8200", description: "OpenBao/Vault address"}
+  namespace: {type: string, default: "", description: "Optional Vault Enterprise namespace"}
+  version: {type: string, default: "auto", description: "KV API version: auto, 1, or 2"}
+  token_env: {type: string, default: "HERMES_OPENBAO_TOKEN", description: "Bootstrap token env var"}
+requires_env:
+  - HERMES_OPENBAO_TOKEN
+provides_hooks: []
+provides_tools: []
+provides_middleware: []
+capabilities:
+  requires_env:
+    - HERMES_OPENBAO_TOKEN
