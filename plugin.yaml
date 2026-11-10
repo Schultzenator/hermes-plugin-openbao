@@ -1,5 +1,5 @@
 name: openbao
-version: "0.1.0"
+version: "0.1.2"
 description: "Resolve Hermes secret-source mappings from OpenBao or HashiCorp Vault KV v1/v2 over the native HTTP API."
 author: "Schultzenator"
 requires_hermes: ">=0.0.0"
